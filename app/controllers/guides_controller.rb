@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-  before_action :set_guide, only: [:show, :edit, :update, :destroy]
+  before_action :set_guide, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /guides
   # GET /guides.json
@@ -60,6 +60,18 @@ class GuidesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def toggle_status
+
+    if @guide.draft?
+      @guide.published!
+    elsif @guide.published?
+      @guide.draft!
+    end
+      
+    redirect_to guides_url, notice: 'Post status has been updated.'
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
