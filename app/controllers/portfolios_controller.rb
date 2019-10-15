@@ -37,6 +37,10 @@ end
     end
  end
 
+def show
+	@portfolio_item = Portfolio.find(params[:id])
+end
+
 def portfolio_item_params
 	params.require(:portfolio).permit(:title, :subtitle, :boby)
 end
