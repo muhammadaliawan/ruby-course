@@ -41,6 +41,20 @@ def show
 	@portfolio_item = Portfolio.find(params[:id])
 end
 
+
+def destroy
+	# Perform the lookup
+	@portfolio_item = Portfolio.find(params[:id])
+
+	# Destroy/delete the recoord
+	@portfolio_item.destroy
+
+	# Redirect
+	respond_to do |format|
+		format.html {redirect_to portfolios_url, notice: 'Record was removed.'}
+	end
+end	
+
 def portfolio_item_params
 	params.require(:portfolio).permit(:title, :subtitle, :boby)
 end
