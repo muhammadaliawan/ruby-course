@@ -5,4 +5,6 @@ class Guide < ApplicationRecord
 	friendly_id :title, use: :slugged
 
 	validates_presence_of :title
+
+	belongs_to :topic
 end
