@@ -2,7 +2,6 @@
 
 	Topic.create!(
 		title: "Topic #{topic}"
-
 	)
 end
 
