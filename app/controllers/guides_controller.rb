@@ -5,11 +5,13 @@ class GuidesController < ApplicationController
   # GET /guides.json
   def index
     @guides = Guide.all
+    @page_title = "My Portfolio Guide"
   end
 
   # GET /guides/1
   # GET /guides/1.json
   def show
+    @page_title = @guide.title
   end
 
   # GET /guides/new
