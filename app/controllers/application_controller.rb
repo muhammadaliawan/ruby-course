@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SetSource
+  include CurrentUserConcern
 
   protect_from_forgery with: :exception
 
@@ -16,5 +17,5 @@ class ApplicationController < ActionController::Base
 	def set_source
 		session[:source] = params[:q] if params[:q]
 	end
-
+	
 end
