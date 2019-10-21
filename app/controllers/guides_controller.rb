@@ -1,5 +1,6 @@
 class GuidesController < ApplicationController
   before_action :set_guide, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout("guide")
 
   # GET /guides
   # GET /guides.json
