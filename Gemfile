@@ -59,3 +59,6 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'bootstrap', '~> 4.3.1'
 
 gem 'teknuk_view_tool', git:"https://github.com/muhammadaliawan/teknuk_view_tool"
+gem 'teknuk_view_tool', git:"https://github.com/muhammadaliawan/teknuk_view_tool"
+
+gem 'petergate', '~> 2.0', '>= 2.0.1'
