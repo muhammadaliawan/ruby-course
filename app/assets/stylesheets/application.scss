@@ -1,6 +1,4 @@
 @import "bootstrap";
-<<<<<<< HEAD
-=======
 
 /*
  * Globals
@@ -162,4 +160,17 @@ body {
     width: 55rem;
   }
 }
->>>>>>> 3942fff... Installed styles for application layout
+
+/*
+ * Custom styles
+ */
+
+ .card-block {
+  color: black;
+  text-align: left;
+  padding: 10px;
+ }
+
+ .auth-links a{
+  color: black;
+ }
