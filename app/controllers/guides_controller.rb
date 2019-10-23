@@ -6,7 +6,7 @@ class GuidesController < ApplicationController
   # GET /guides
   # GET /guides.json
   def index
-    @guides = Guide.all
+    @guides = Guide.page(params[:page]).per(5)
     @page_title = "My Portfolio Guide"
   end
 
