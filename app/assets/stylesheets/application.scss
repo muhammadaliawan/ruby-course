@@ -162,15 +162,18 @@ body {
 }
 
 /*
- * Custom styles
+ * Custom Styles
  */
 
- .card-block {
+.card-block {
   color: black;
   text-align: left;
-  padding: 10px;
- }
+}
 
- .auth-links a{
+.auth-links a {
   color: black;
- }
+}
+
+.register-text {
+  text-align: right;
+}
