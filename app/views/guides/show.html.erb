@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="col-sm-8 blog-main">
 
-<p>
-  <strong>Title:</strong>
-  <%= @guide.title %>
-</p>
+<h2><%= @guide.title %></h2>
 
-<%= link_to 'Edit', edit_guide_path(@guide) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', guides_path %>
+<%= link_to 'Edit', edit_guide_path(@guide) if logged_in?(:site_admin) %>
+
+
+</div>
