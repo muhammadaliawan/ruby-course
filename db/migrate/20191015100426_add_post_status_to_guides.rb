@@ -1,4 +1,4 @@
-class AddPostStatusToGuides < ActiveRecord::Migration[6.0]
+class AddPostStatusToGuides < ActiveRecord::Migration[5.0]
   def change
     add_column :guides, :status, :integer, default: 0
   end
