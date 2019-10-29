@@ -17,11 +17,15 @@ class GuidesController < ApplicationController
   # GET /guides/1
   # GET /guides/1.json
   def show
-    @guide = Guide.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @guide.published?
+      @guide = Guide.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
 
-    @page_title = @guide.title
-    @seo_keywords = @guide.content
+      @page_title = @guide.title
+      @seo_keywords = @guide.content
+    else
+      redirect_to guides_path, notice: "You are not authorized to access this page"
+    end
   end
 
   # GET /guides/new
