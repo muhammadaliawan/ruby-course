@@ -4,7 +4,7 @@ class Guide < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 
-	validates_presence_of :title, :content
+	validates_presence_of :title, :content, :topic_id
 
 	belongs_to :topic
 
