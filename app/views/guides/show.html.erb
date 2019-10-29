@@ -11,6 +11,8 @@
 
 <%= render 'comments/comment_form' %>
 
-<%= render @guide.comments %>
+<div id="comments" data-guide-id="<%= @guide.id %>">
+	<%= render @guide.comments %>
+</div>
 
 </div>
