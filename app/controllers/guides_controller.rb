@@ -13,7 +13,11 @@ class GuidesController < ApplicationController
   # GET /guides/1
   # GET /guides/1.json
   def show
+    @guide = Guide.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
     @page_title = @guide.title
+    @seo_keywords = @guide.content
   end
 
   # GET /guides/new
