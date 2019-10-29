@@ -9,7 +9,8 @@ puts "3 topics created"
 
 10.times do |guide|
 	Guide.create!(
-		title: "My blog post #{guide}", topic_id: Topic.last.id
+		title: "My blog post #{guide}", topic_id: Topic.last.id,
+		content: "This is guide's content"
 	)
 end
 
