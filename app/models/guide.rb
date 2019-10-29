@@ -7,4 +7,6 @@ class Guide < ApplicationRecord
 	validates_presence_of :title, :content
 
 	belongs_to :topic
+
+	has_many :comments, dependent: :destroy
 end
