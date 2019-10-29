@@ -6,7 +6,11 @@ class GuidesController < ApplicationController
   # GET /guides
   # GET /guides.json
   def index
-    @guides = Guide.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @guides = Guide.recent.page(params[:page]).per(5)
+    else
+      @guides = Guide.published.recent.page(params[:page]).per(5)
+    end
     @page_title = "My Portfolio Guide"
   end
 
@@ -89,6 +93,6 @@ class GuidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guide_params
-      params.require(:guide).permit(:title)
+      params.require(:guide).permit(:title, :content)
     end
 end

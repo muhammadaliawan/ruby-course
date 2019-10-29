@@ -9,4 +9,9 @@ class Guide < ApplicationRecord
 	belongs_to :topic
 
 	has_many :comments, dependent: :destroy
+
+
+	def self.recent
+		order("created_at DESC")
+	end
 end
