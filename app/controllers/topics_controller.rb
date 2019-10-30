@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   
-  layout 'guide'
+  before_action :set_sidebar_topics
+  layout ("guide")
   def index
   	@topics = Topic.all
   end
@@ -13,5 +14,11 @@ class TopicsController < ApplicationController
     else
       @guides = @topic.guides.published.recent.page(params[:page]).per(5)
     end
+  end
+
+  private
+
+  def set_sidebar_topics
+  	@side_bar_topics = Topic.with_guides
   end
 end
