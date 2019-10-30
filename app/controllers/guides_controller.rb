@@ -98,7 +98,7 @@ class GuidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guide_params
-      params.require(:guide).permit(:title, :content, :topic_id)
+      params.require(:guide).permit(:title, :content, :topic_id, :status)
     end
 
     def set_sidebar_topics
